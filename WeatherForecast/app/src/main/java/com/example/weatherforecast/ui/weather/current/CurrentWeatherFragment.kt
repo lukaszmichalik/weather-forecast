@@ -55,6 +55,7 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
             group_loading.visibility = View.GONE
             updateDateToToday()
             updateTemperature(it.temp)
+            Log.d("tag4",it.temp.toString())
             updatePressure(it.pressure)
 
        })
