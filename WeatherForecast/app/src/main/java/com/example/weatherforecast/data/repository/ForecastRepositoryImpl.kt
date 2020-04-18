@@ -75,8 +75,8 @@ class ForecastRepositoryImpl(
             return
         }
 
-        if(isFetchCurrentNeeded(lastWeatherLocation.zonedDateTime))
-            fetchCurrentWeather()
+      /*  if(isFetchCurrentNeeded(lastWeatherLocation.zonedDateTime))
+            fetchCurrentWeather()*/
     }
 
     private suspend fun fetchCurrentWeather() {
@@ -85,8 +85,8 @@ class ForecastRepositoryImpl(
         )
     }
 
-    private  fun isFetchCurrentNeeded(lastFetchTime: ZonedDateTime): Boolean {
+  /*  private  fun isFetchCurrentNeeded(lastFetchTime: ZonedDateTime): Boolean {
         val thirtyMinutesAgo = ZonedDateTime.now().minusMinutes(30)
         return lastFetchTime.isBefore(thirtyMinutesAgo)
-    }
+    }*/
 }

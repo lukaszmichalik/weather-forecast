@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.weatherforecast.R
 import com.example.weatherforecast.internal.glide.GlideApp
@@ -37,7 +38,7 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this, viewModelFactory)
+        viewModel = ViewModelProvider(this, viewModelFactory)
             .get(CurrentWeatherViewModel::class.java)
 
         bindUI()
@@ -74,6 +75,8 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
 
             group_loading.visibility = View.GONE
             updateSunrise(sys.sunrise, it.timezone)
+            Log.d("in sys ",it.timezone)
+            Log.d("sunrise in sys ",sys.sunrise.toString())
             updateSunset(sys.sunset, it.timezone)
             Log.d("tag2",it.timezone)
         })
