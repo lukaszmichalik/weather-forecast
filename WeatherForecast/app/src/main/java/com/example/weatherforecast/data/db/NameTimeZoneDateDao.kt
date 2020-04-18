@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.weatherforecast.data.network.response.CURRENTWEATHER_ID
 import com.example.weatherforecast.data.network.response.CurrentWeatherResponse
 
 @Dao
@@ -14,5 +13,5 @@ interface NameTimeZoneDateDao {
     fun upsert(NameTimeZoneDate: CurrentWeatherResponse?)
 
     @Query("select * from current_weather")
-    fun loadNameTimeZoneDateTime(): LiveData<CurrentWeatherResponse>
+    fun loadNameTimeZoneDateTime(): LiveData<CurrentWeatherResponse?>
 }

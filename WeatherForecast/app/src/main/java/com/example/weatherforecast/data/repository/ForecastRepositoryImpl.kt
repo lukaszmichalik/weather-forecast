@@ -43,7 +43,7 @@ class ForecastRepositoryImpl(
         }
     }
 
-    override suspend fun loadNameTimeZoneDate(): LiveData<CurrentWeatherResponse> {
+    override suspend fun loadNameTimeZoneDate(): LiveData<out CurrentWeatherResponse?> {
         return withContext(Dispatchers.IO){
             initWeatherData()
             return@withContext nameTimeZoneDateDao.loadNameTimeZoneDateTime()

@@ -9,6 +9,6 @@ import com.example.weatherforecast.data.network.response.CurrentWeatherResponse
 interface ForecastRepository {
     suspend fun getTempAndPressure(): LiveData<out Main>
     suspend fun getSunriseAndSunset(): LiveData<out Sys>
-    suspend fun loadNameTimeZoneDate(): LiveData<CurrentWeatherResponse>
+    suspend fun loadNameTimeZoneDate(): LiveData<out CurrentWeatherResponse>
     suspend fun loadDescriptionAndIcon(): LiveData<Weather>
 }

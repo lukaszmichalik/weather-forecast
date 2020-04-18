@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.weatherforecast.data.db.entity.SYS_ID
 import com.example.weatherforecast.data.db.entity.Sys
 
 @Dao
