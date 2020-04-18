@@ -75,8 +75,8 @@ class ForecastRepositoryImpl(
             return
         }
 
-        /*if(isFetchCurrentNeeded(lastWeatherLocation.zonedDateTime))
-            fetchCurrentWeather()*/
+        if(isFetchCurrentNeeded(lastWeatherLocation.zonedDateTime))
+            fetchCurrentWeather()
     }
 
     private suspend fun fetchCurrentWeather() {
