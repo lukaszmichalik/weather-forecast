@@ -13,6 +13,6 @@ interface NameTimeZoneDateDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun upsert(NameTimeZoneDate: CurrentWeatherResponse?)
 
-    @Query("select time_zone, name, date from current_weather")
+    @Query("select * from current_weather")
     fun loadNameTimeZoneDateTime(): LiveData<CurrentWeatherResponse>
 }
