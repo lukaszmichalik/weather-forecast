@@ -13,6 +13,6 @@ interface WeatherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun upsert(weather: ArrayList<Weather>?)
 
-    @Query("select * from weather ")
+    @Query("select * from weather where id_w=$WEATHER_ID")
     fun loadDescriptionAndIcon() : LiveData<Weather?>
 }

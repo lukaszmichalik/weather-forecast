@@ -23,7 +23,7 @@ data class CurrentWeatherResponse(
 
 ){
     @PrimaryKey(autoGenerate = false)
-    var id: Int = CURRENTWEATHER_ID
+    var id_current_weather: Int = CURRENTWEATHER_ID
     val zonedDateTime: ZonedDateTime
         get(){
             val instant = Instant.ofEpochSecond(dt)
