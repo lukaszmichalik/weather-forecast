@@ -53,7 +53,9 @@ interface ApiWeatherOpenMap {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ApiWeatherOpenMap::class.java)
+
         }
+
     }
 
 }
