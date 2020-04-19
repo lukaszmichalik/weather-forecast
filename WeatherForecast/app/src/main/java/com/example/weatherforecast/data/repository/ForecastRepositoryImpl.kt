@@ -13,6 +13,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.threeten.bp.ZonedDateTime
+import retrofit2.Response
 
 class ForecastRepositoryImpl(
     private val currentWeatherDao: CurrentWeatherDao,
