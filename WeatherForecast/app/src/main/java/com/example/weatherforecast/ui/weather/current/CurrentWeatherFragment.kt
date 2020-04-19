@@ -88,7 +88,7 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
             updateDescription(it.description)
 
             GlideApp.with(this@CurrentWeatherFragment)
-                .load("http://openweathermap.org/img/wn/${it.icon}.png")
+                .load("http://openweathermap.org/img/wn/${it.icon}@2x.png")
                 .into(imageView_condition_icon)
         })
     }
@@ -98,7 +98,7 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
     }
 
     private fun updateDateToToday(){
-        (activity as? AppCompatActivity)?.supportActionBar?.subtitle = "Today"
+        (activity as? AppCompatActivity)?.supportActionBar?.subtitle = "Pogoda na dziś"
     }
 
     private fun updateTemperature(temperature: Double){

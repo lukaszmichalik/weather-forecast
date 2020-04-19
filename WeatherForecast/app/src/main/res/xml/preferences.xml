@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
-        android:title="Weather Location">
+        android:title="Zmień lokalizację">
 
         <EditTextPreference
             android:key="CUSTOM_LOCATION"
-            android:title="Location"
-            android:summary="The location for which the weather is displayed"
+            android:title="Lokalizacja"
+            android:summary="wybierz lokalizację, dla której wyświetlić pogodę"
             android:defaultValue="Los Angeles" />
     </PreferenceCategory>
 </PreferenceScreen>
