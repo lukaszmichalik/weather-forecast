@@ -50,7 +50,7 @@ class ForecastRepositoryImpl(
         }
     }
 
-    override suspend fun loadDescriptionAndIcon(): LiveData<Weather> {
+    override suspend fun loadDescriptionAndIcon(): LiveData<out Weather?> {
         return withContext(Dispatchers.IO){
             initWeatherData()
             return@withContext weatherDao.loadDescriptionAndIcon()
@@ -59,9 +59,9 @@ class ForecastRepositoryImpl(
 
     private fun persistFetchedCurrentWeather(fetchedWeather: CurrentWeatherResponse) {
             GlobalScope.launch(Dispatchers.IO) {
-            currentWeatherDao.upsert(fetchedWeather.main)
-                sunriseSunsetDao.upsert(fetchedWeather.sys)
                 nameTimeZoneDateDao.upsert(fetchedWeather)
+                currentWeatherDao.upsert(fetchedWeather.main)
+                sunriseSunsetDao.upsert(fetchedWeather.sys)
                 weatherDao.upsert(fetchedWeather.weather)
         }
     }

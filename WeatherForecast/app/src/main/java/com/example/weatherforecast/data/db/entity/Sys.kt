@@ -13,7 +13,7 @@ data class Sys(
     val sunset: Long
 ){
     @PrimaryKey(autoGenerate = false)
-    var id_s: Int = SYS_ID
+    var id_s: Int= SYS_ID
 
     /*fun formatTime(dateObject: Date): String  {
         val timeFormat: SimpleDateFormat = SimpleDateFormat("h:mm a")

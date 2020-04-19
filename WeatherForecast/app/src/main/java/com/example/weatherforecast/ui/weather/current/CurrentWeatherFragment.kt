@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.example.weatherforecast.R
 import com.example.weatherforecast.internal.glide.GlideApp
 import com.example.weatherforecast.ui.base.ScopeFragment

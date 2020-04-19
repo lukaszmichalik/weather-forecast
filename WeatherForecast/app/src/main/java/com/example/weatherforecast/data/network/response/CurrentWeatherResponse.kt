@@ -1,6 +1,5 @@
 package com.example.weatherforecast.data.network.response
 
-import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -15,16 +14,16 @@ const val CURRENTWEATHER_ID = 0
 
 @Entity(tableName = "current_weather")
 data class CurrentWeatherResponse(
-    @ColumnInfo(name = "date") val dt: Long,
-    @Embedded val main: Main?,
-    @ColumnInfo(name = "name") val name: String,
-    @Embedded val sys: Sys?,
-    @ColumnInfo(name = "time_zone") val timezone: String,
-    @Embedded val weather: ArrayList<Weather?>?
+    val dt: Long,
+    @Embedded val main: Main,
+    val name: String,
+    @Embedded val sys: Sys,
+    val timezone: String,
+    @Embedded val weather: ArrayList<Weather>?
 
 ){
     @PrimaryKey(autoGenerate = false)
-    var id: Int? = CURRENTWEATHER_ID
+    var id: Int = CURRENTWEATHER_ID
     val zonedDateTime: ZonedDateTime
         get(){
             val instant = Instant.ofEpochSecond(dt)

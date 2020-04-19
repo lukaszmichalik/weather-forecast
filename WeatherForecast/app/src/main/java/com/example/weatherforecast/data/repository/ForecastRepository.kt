@@ -10,5 +10,5 @@ interface ForecastRepository {
     suspend fun getTempAndPressure(): LiveData<out Main>
     suspend fun getSunriseAndSunset(): LiveData<out Sys>
     suspend fun loadNameTimeZoneDate(): LiveData<out CurrentWeatherResponse>
-    suspend fun loadDescriptionAndIcon(): LiveData<Weather>
+    suspend fun loadDescriptionAndIcon(): LiveData<out Weather>
 }
